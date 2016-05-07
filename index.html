@@ -212,10 +212,14 @@ $(document).ready(function(){
 			}
 			else
 			{		
-				$(this).children(".itemcontent, .pricewrap").hide(1000);
+				$(this).children(".itemcontent").hide(1000);
 				$(this).children(".detail").show(1000);
 			}
 		});
+		
+		/*$(document).on("click",".itemcontent",function(){
+				$(this).parent("item").trigger("click")
+		 	});*/
 });
 
 
