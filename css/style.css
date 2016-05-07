@@ -3,11 +3,12 @@
 	margin:0;
 	padding:0;
 	word-wrap:break-word;
+	font-family:Calibri;
 }
 
 html
 {
-	font-size:62.5%;
+	font-size:80%;
 	height:100%;
 }
 
@@ -191,6 +192,7 @@ body
 	width:10rem;
 	color:#FFF;
 	top:0;
+	text-align:right;
 }
 
 
