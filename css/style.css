@@ -1,0 +1,197 @@
+*
+{
+	margin:0;
+	padding:0;
+	word-wrap:break-word;
+}
+
+html
+{
+	font-size:62.5%;
+	height:100%;
+}
+
+body
+{
+	background:#efefef;
+	height:100%;
+	font-size:1.6rem ;
+}
+
+
+.main
+{
+	padding:50px;
+	margin-left:auto;
+	margin-right:auto;
+	width:80%;
+}
+
+
+.article
+{
+	font-size:4rem;
+	font-weight:bold;
+	color:#444;
+}
+
+.filter
+{
+	text-align:right;
+	color:#8c8c8c;
+	
+}
+
+.pricebtn, .popbtn
+{
+	font-size:2.5rem;
+	display:inline-block;
+	padding:5px;
+	width:15rem;
+	text-align:center;
+	font-weight:bold;
+	cursor:pointer;
+}
+
+.item
+{
+	clear:both;
+	position:relative;
+	background:#fff;
+	margin-top:20px;
+	overflow:hidden;
+	padding-right:20px;
+}
+
+.imgwrap
+{
+	width:45%;
+	display:inline-block;
+	float:left;
+}
+
+.imgwrap img
+{
+	width:100%;
+	height:auto;
+}
+
+.itemcontent
+{
+	padding-left:2%;
+	width:53%;
+	float:right;
+	height:100%;
+}
+
+.title
+{
+	padding-top:10px;
+	padding-bottom:10px;
+	border-bottom:1px #ccc solid;
+	font-size:4rem;
+	font-weight:bold;
+}
+
+.location
+{
+	margin-top:10px;
+	color:#8c8c8c;
+}
+
+.detail
+{
+	padding-left:2%;
+	width:53%;
+	float:right;
+	height:100%;
+	display:none;
+}
+
+.pricewrap
+{
+	position:absolute;
+	right:20px;
+	bottom:10px;
+	color:#faa800;
+	font-weight:bold;
+}
+
+.price
+{
+	font-size:5rem;
+}
+
+.unit
+{
+	text-align:right;
+}
+
+@media (max-width: 1400px) and (min-width: 961px) { 
+.main
+{
+	width:90%;
+}
+}
+
+@media (max-width: 960px) and (min-width: 0px) { 
+.main
+{
+	width:100%;
+	padding:0;
+	
+}
+.list
+{
+	margin-top:45px;
+}
+
+.item
+{
+	padding-right:0px;
+}
+
+.imgwrap
+{
+	width:100%;
+}
+
+.itemcontent, .detail
+{
+	width:94%;
+	padding:0 3% 3% 3%;
+}
+
+.article
+{
+	font-size:3rem;
+	background:#faa800;
+	text-align:center;
+	padding-top:20px;
+	padding-bottom:10px;
+}
+.title, .price
+{
+	font-size:2rem;
+}
+
+
+.pricebtn, .popbtn
+{
+	font-size:1.5rem;
+	width:50%;
+	padding:5px 0;
+	float:left;
+	background:#666;
+}
+
+.pricewrap
+{
+	height:4.8rem;
+	width:10rem;
+	color:#FFF;
+	top:0;
+}
+
+
+}

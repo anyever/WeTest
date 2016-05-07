@@ -1,0 +1,224 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<title>home</title>
+<script src="js/jquery.1.7.2.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+</head>
+
+<body>
+
+<div class="main">
+   
+    <p class="article">Minneapolis,MN: 4 Apartments</p>
+    <div class="filter">
+       <p class="popbtn">Popularity</p>
+       <p class="pricebtn">Price</p>
+    </div>
+    <div class="list">
+    </div>
+</div>
+
+</body>
+
+<script type="text/javascript">
+//为避免本机调试跨域问题，因而直接在文档中加载。
+var jstr = 
+{
+    "apartments": [
+        {
+        	"name": "The Pavilion on Berry",
+        	"image": "my favourite 1.jpg",
+        	"price": 512,
+        	"popularity": 4,
+        	"description": "University of Minnesota, Twin Cities<br>Minneapolis, MN"
+        },
+        {        	
+        	"name": "Radius @15th",
+        	"image": "my favourite 3.jpg",
+        	"price": 492,
+        	"popularity": 5,
+        	"description": "University of Minnesota, Twin Cities<br>Minneapolis, MN"
+        },
+        {
+
+        	"name": "416 Lofts",
+        	"image": "my favourite 2.jpg",
+        	"price": 460,
+        	"popularity": 3,
+        	"description": "University of Minnesota, Twin Cities<br>Minneapolis, MN"
+        },
+        {
+
+        	"name": "Edge on Oak",
+        	"image": "my favourite 5.jpg",
+        	"price": 532,
+        	"popularity": 7,
+        	"description": "University of Minnesota, Twin Cities<br>Minneapolis, MN"
+        },
+		{
+        	"name": "The Pavilion on Berry",
+        	"image": "my favourite 1.jpg",
+        	"price": 123,
+        	"popularity": 4,
+        	"description": "University of Minnesota, Twin Cities<br>Minneapolis, MN"
+        },
+        {        	
+        	"name": "Radius @15th",
+        	"image": "my favourite 3.jpg",
+        	"price": 892,
+        	"popularity": 5,
+        	"description": "University of Minnesota, Twin Cities<br>Minneapolis, MN"
+        },
+		{
+
+        	"name": "416 Lofts",
+        	"image": "my favourite 2.jpg",
+        	"price": 760,
+        	"popularity": 3,
+        	"description": "University of Minnesota, Twin Cities<br>Minneapolis, MN"
+        },
+        {
+
+        	"name": "Edge on Oak",
+        	"image": "my favourite 5.jpg",
+        	"price": 567,
+        	"popularity": 7,
+        	"description": "University of Minnesota, Twin Cities<br>Minneapolis, MN"
+        },
+		{
+        	"name": "The Pavilion on Berry",
+        	"image": "my favourite 1.jpg",
+        	"price": 523,
+        	"popularity": 4,
+        	"description": "University of Minnesota, Twin Cities<br>Minneapolis, MN"
+        },
+        {        	
+        	"name": "Radius @15th",
+        	"image": "my favourite 3.jpg",
+        	"price": 456,
+        	"popularity": 5,
+        	"description": "University of Minnesota, Twin Cities<br>Minneapolis, MN"
+        },
+		{
+
+        	"name": "416 Lofts",
+        	"image": "my favourite 2.jpg",
+        	"price": 720,
+        	"popularity": 3,
+        	"description": "University of Minnesota, Twin Cities<br>Minneapolis, MN"
+        },
+        {
+
+        	"name": "Edge on Oak",
+        	"image": "my favourite 5.jpg",
+        	"price": 372,
+        	"popularity": 7,
+        	"description": "University of Minnesota, Twin Cities<br>Minneapolis, MN"
+        },
+    ]
+}
+
+//此方法用于加载并显示出json中每一个对象
+function showlist(o){
+	var apt=o;
+	for(i=0; i<apt.length; i++)
+	{
+		var newitem = 
+		'<div class="item">'
+			+'<div class="imgwrap">'
+				+'<img src="img/'+apt[i].image+'">'
+			+'</div>'
+				+'<div class="itemcontent">'
+					+'<div class="infowrap">'
+						+'<div class="title">'
+							+apt[i].name
+						+'</div>'
+						+'<div class="location">'
+							+'<p class="school">'
+								+apt[i].description
+							+'</p>'
+						+'</div>'
+					+'</div>'
+				+'</div>'
+				+'<div class="detail">'
+				+'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
+				+'</div>'
+				+'<div class="pricewrap">'
+					+'<span class="from">From</span>'
+					+'<span class="price">'
+						+'$'+apt[i].price
+					+'</span>'
+					+'<div class="unit">'
+						+'USD/Month'
+					+'</div>'
+				+'</div>'
+		+'</div>';
+		newitem=$(newitem).hide();
+		$(".list").append(newitem);
+		newitem.fadeIn(600);
+	}
+}
+
+
+$(document).ready(function(){
+	
+	apt= jstr.apartments;
+	
+	//单击Popularity后重新排序
+	$(".popbtn").on("click",function(){
+		apt.sort(function(a,b){ 
+			var x = a.popularity < b.popularity? -1:1; 
+			return x; 
+		});
+		$(".popbtn").css("background","#faa800")
+		$(".popbtn").css("color","#000")
+		$(".pricebtn").css("background","")
+		$(".pricebtn").css("color","#8c8c8c")
+		$('.item').remove();
+		showlist(apt);
+	});
+	
+	//单击Price后重新排序
+	$(".pricebtn").on("click",function(){
+		apt.sort(function(a,b){ 
+			var x = a.price < b.price? -1:1; 
+			return x; 
+		});
+		$(".pricebtn").css("background","#faa800")
+		$(".pricebtn").css("color","#000")
+		$(".popbtn").css("background","")
+		$(".popbtn").css("color","#8c8c8c")
+		$('.item').remove();
+		showlist(apt);
+	});
+	
+	//首次加载，默认按popularity排序
+	apt.sort(function(a,b){ 
+			var x = a.popularity < b.popularity? -1:1; 
+			return x; 
+		});
+	$(".popbtn").css("background","#faa800")
+	$(".popbtn").css("color","#000")
+	showlist(apt);
+	
+	//绑定详情页切换
+	$(document).on("click",".item",function(){
+			if($(this).children(".itemcontent").is(":hidden"))//判断当前detail是否已显示
+			{
+				$(this).children(".detail").hide(1000);
+				$(this).children(".itemcontent, .pricewrap").show(1000);	
+			}
+			else
+			{		
+				$(this).children(".itemcontent, .pricewrap").hide(1000);
+				$(this).children(".detail").show(1000);
+			}
+		});
+});
+
+
+</script>
+
+</html>
