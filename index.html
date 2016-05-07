@@ -169,7 +169,7 @@ $(document).ready(function(){
 	//单击Popularity后重新排序
 	$(".popbtn").on("click",function(){
 		apt.sort(function(a,b){ 
-			var x = a.popularity < b.popularity? -1:1; 
+			var x = a.popularity > b.popularity? -1:1; 
 			return x; 
 		});
 		$(".popbtn").css("background","#faa800")
@@ -183,7 +183,7 @@ $(document).ready(function(){
 	//单击Price后重新排序
 	$(".pricebtn").on("click",function(){
 		apt.sort(function(a,b){ 
-			var x = a.price < b.price? -1:1; 
+			var x = a.price > b.price? -1:1; 
 			return x; 
 		});
 		$(".pricebtn").css("background","#faa800")
@@ -196,7 +196,7 @@ $(document).ready(function(){
 	
 	//首次加载，默认按popularity排序
 	apt.sort(function(a,b){ 
-			var x = a.popularity < b.popularity? -1:1; 
+			var x = a.popularity > b.popularity? -1:1; 
 			return x; 
 		});
 	$(".popbtn").css("background","#faa800")
