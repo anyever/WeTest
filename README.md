@@ -1,4 +1,4 @@
-点此预览： <a href="songyk.com/wehousing">songyk.com/wehousing</a><br>
+点此预览： <a href="http://songyk.com/wehousing">songyk.com/wehousing</a><br>
 1、大部分要求都完成。<br>
 3、电脑端/移动端 响应式设计。<br>
 2、因为PDF中并没有给出详细色值与部件尺寸、字号，因此项目使用的色值都通过用PS从pdf的图片中提取，尺寸大多目测。<br>
